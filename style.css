@@ -7,19 +7,13 @@
  }
 
 body {
-    min-height: 100vh;
     background-image: url("calvin-craig-y8b001e2bs0-unsplash.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    height: 700px;
     filter: brightness(70%);
     font-family: 'Montserrat', sans-serif;
     text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* color: black; */
     color: white;
     font-weight: 600;
 }
@@ -29,12 +23,19 @@ h1 {
     text-transform: uppercase;
 }
 
+.parent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
 .quote-container {
     width: auto;
     max-width: 900px;
     padding: 20px 30px;
     border-radius: 10px;
-    /* background-color: rgb(255, 255, 255, 0.6); */
     background-color: rgb(8, 8, 8, 0.9);
     box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.2);
 }
@@ -97,6 +98,25 @@ button {
     box-shadow: 0 0.3rem rgba(121, 121, 121, 0.65);
 }
 
+/* loader  */
+.loader {
+    border: 12px solid white;
+    border-top: 12px solid #04B4DC; 
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    animation: spin 2s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+}
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 /* media query */
 @media screen and (max-width: 1000px){
     .quote-container {
@@ -105,5 +125,30 @@ button {
 
     .quote-text {
         font-size: 2.5rem;
+    }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .loader {
+        border: 8px solid white;
+        border-top: 8px solid #04B4DC; 
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        left: 42%;
+    }
+
+    .quote-text {
+        font-size: 2rem;
+    }
+
+    .button-container {
+        margin-top: 40px;
+    }
+
+    button {
+        font-size: 12px;
+        margin: 5px;
     }
 }
